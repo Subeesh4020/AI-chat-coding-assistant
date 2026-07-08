@@ -19,25 +19,27 @@ Intelligent Code Context: Tailored assistance for code generation & debugging et
 Dual-App Architecture: Separated frontend and backend layers managed under a unified workspace structure.
 
 # 📂 Repository Architecture
-AI-chat-coding-assistant/
 
+```text
+AI-chat-coding-assistant/
 ├── .gitignore          
 ├── README.md            # Documentation guide
 ├── LICENSE              # License file
-├── AiServices
-|      |── main.py       # python service entry file
-|      └── ....... 
+├── AiServices/
+│   ├── main.py          # Python service entry file
+│   └── ...
 ├── Backend/             # Node.js & Express REST API
-|   ├── src  
-│   |    ├── server.ts   # Entry point with dynamic CORS management
-|   |    └── ......   
-│   |── package.json
-|   └── ......
-|  
+│   ├── src/  
+│   │   ├── server.ts    # Entry point with dynamic CORS management
+│   │   └── ...   
+│   ├── package.json
+│   └── ...
 └── Frontend/            # React (Vite + TypeScript)
     ├── vite.config.ts   # Port-locked & host-exposed settings
     ├── src/
-    |   |── App.tsx      
-    │   └── ..........
+    │   ├── App.tsx      
+    │   └── ...
     └── package.json
+```
+
   
