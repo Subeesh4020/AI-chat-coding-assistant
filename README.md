@@ -46,10 +46,10 @@ AI-chat-coding-assistant/
 Prerequisites:
 Make sure you have Node.js installed on your computer.
 
-1. Installation
+1. Installation- 
    Clone the repository using 'git clone' and install dependencies across all workspaces.
 
-2. Run the app
+2. Run the app- 
    You can start seperate services for Node API, Python service and React frontend
    or use a container locally. Make sure you have Redis running before start running all prcesses
 
