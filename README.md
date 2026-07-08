@@ -10,9 +10,9 @@ https://subi333-aicodingassistant.hf.space/
 A full-stack, real-time AI assistant designed to streamline your coding workflow. 
 This project is built using a decoupled architecture.
 
-# Frontend - React (Vite)
-# Backend - Node.js (Express)
-#           Python worker service
+ Frontend - React (Vite)
+Backend - Node.js (Express)
+          Python worker service
 
 # Key Features
 Intelligent Code Context: Tailored assistance for code generation & debugging etc. 
@@ -41,5 +41,18 @@ AI-chat-coding-assistant/
     │   └── ...
     └── package.json
 ```
+
+# 🛠️ Local Development Setup
+Prerequisites:
+Make sure you have Node.js installed on your computer.
+
+1. Installation
+   Clone the repository using 'git clone' and install dependencies across all workspaces.
+
+2. Run the app
+   You can start seperate services for Node API, Python service and React frontend
+   or use a container locally. Make sure you have Redis running before start running all prcesses
+
+If you are new to containerisation or process management with PM2, please refer to their documentation first.
 
   
