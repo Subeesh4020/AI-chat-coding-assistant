@@ -20,6 +20,7 @@ Dual-App Architecture: Separated frontend and backend layers managed under a uni
 
 # 📂 Repository Architecture
 AI-chat-coding-assistant/
+
 ├── .gitignore          
 ├── README.md            # Documentation guide
 ├── LICENSE              # License file
