@@ -1,0 +1,46 @@
+/* 1. Container holding the code block and the button */
+.codeBlockContainer {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #0f172a; /* Sleek dark background */
+}
+
+/* 2. Styled Copy Button positioned perfectly at top right */
+.copyCodeBtn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 10;
+  padding: 4px 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 3. Smooth fade-in animation when hovering over the code block */
+.codeBlockContainer:hover .copyCodeBtn {
+  opacity: 1;
+}
+
+/* 4. Button styles on hover */
+.copyCodeBtn:hover {
+  color: #ffffff;
+  background-color: #475569;
+}
+
+/* 5. Clean layout adjustments for the text container */
+.customPre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: transparent !important; /* Let the container handle background */
+}

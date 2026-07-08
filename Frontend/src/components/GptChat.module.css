@@ -1,0 +1,303 @@
+.appWrapper {
+  display: flex;
+  /* 1. Fixes horizontal overflowing issues on mobile screens */
+  width: 100%; 
+  
+  /* 2. Forces the container to adapt to mobile browser navigation bars dynamically */
+  width: 100vw;  /* Fallback for older browsers */
+  height: 100vh;
+  overflow: hidden;
+  background-color: #212121;
+  color: #e3e3e3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 260px;
+  height: 100%;
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s ease;
+  flex-shrink: 0;
+  border-right: 1px solid #2f2f2f;
+}
+
+.sidebarClosed {
+  width: 0px;
+  transform: translateX(-260px);
+  border-right: none;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  gap: 8px;
+}
+
+.newChatBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #424242;
+  border-radius: 6px;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.newChatBtn:hover {
+  background-color: #2a2a2a;
+}
+
+.toggleCollapseBtn, .menuExpandBtn {
+  background: transparent;
+  border: none;
+  color: #b4b4b4;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.toggleCollapseBtn:hover, .menuExpandBtn:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.historyList {
+  flex: 1;
+  padding: 0 12px;
+  overflow-y: auto;
+}
+
+.historySectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8e8e8e;
+  padding: 12px 8px 6px;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.historyItem:hover {
+  background-color: #2a2a2a;
+}
+
+.chatTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main Arena */
+.mainCanvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #212121;
+  position: relative;
+}
+
+.topBar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.modelBadge {
+  font-weight: 600;
+  font-size: 15px;
+  color: #b4b4b4;
+}
+
+/* Messaging Scroller */
+.scrollContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 24px;
+}
+
+.contentConstrain {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.messageRow {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.identityGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatarIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.userAvatar {
+  background-color: #543fd7;
+  color: #fff;
+}
+
+.assistantAvatar {
+  background-color: #10a37f;
+  color: #fff;
+}
+
+.senderLabel {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bubblePayload {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #d1d1d1;
+  padding-left: 40px;
+}
+
+.bubblePayload p {
+  margin: 0;
+}
+
+/* Streaming Loader dots */
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  padding-left: 40px;
+  align-items: center;
+  height: 24px;
+}
+
+.typingIndicator span {
+  width: 6px;
+  height: 6px;
+  background-color: #b4b4b4;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typingIndicator span:nth-child(1) { animation-delay: -0.32s; }
+.typingIndicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
+/* Footer & Input Controls */
+.dockFooter {
+  padding: 0 16px 24px;
+  background-color: #212121;
+}
+
+.dockConstrain {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputFormBox {
+  position: relative;
+  background-color: #2f2f2f;
+  border: 1px solid #424242;
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.spinnerCont {
+  text-align: center;
+}
+
+.textField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: none;
+  max-height: 200px;
+  padding-right: 40px;
+  font-family: inherit;
+}
+
+.textField::placeholder {
+  color: #7d7d7d;
+}
+
+.actionSendBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.actionSendBtn:disabled {
+  background-color: #424242;
+  color: #171717;
+  cursor: not-allowed;
+}
+
+.disclaimerText {
+  font-size: 12px;
+  color: #7d7d7d;
+  text-align: center;
+  margin: 0;
+}

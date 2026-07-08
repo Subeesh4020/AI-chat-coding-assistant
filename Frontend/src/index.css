@@ -1,0 +1,12 @@
+/* Zero out root margins and block-level containers */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #212121;
+}
+
+body {
+  display: block; /* Removes any default flex-centering from Vite templates */
+}

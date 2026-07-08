@@ -1,0 +1,44 @@
+.spinnerContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+}
+
+.spinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tick {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* Define the tick line proportions */
+  width: 2px;
+  height: 25%; /* Length of the line from outside toward inside */
+  background-color: #6366f1; /* Your primary accent theme color */
+  border-radius: 2px;
+  
+  /* Establish the transformation anchor point at the exact center of the spinner box */
+  transform-origin: 50% 200%; 
+  
+  /* Calculate rotation for each line (360 degrees / 12 ticks = 30 degrees each) */
+  transform: translateX(-50%) rotate(calc(var(--tick-index) * 30deg));
+  
+  /* Apply the fading wave animation loop */
+  animation: fadePulse 1.2s linear infinite;
+  /* Stagger execution starts based on index order position */
+  animation-delay: calc(var(--tick-index) * -0.1s);
+}
+
+@keyframes fadePulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
