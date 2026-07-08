@@ -5,6 +5,8 @@ Please check out the app live
 
 https://subi333-aicodingassistant.hf.space/
 
+You may need to wait 1 - 2 mts to get response as it is optimized to run on CPU
+
 
 # AI Coding Assistant 🤖💻
 A full-stack, real-time AI assistant designed to streamline your coding workflow. 
